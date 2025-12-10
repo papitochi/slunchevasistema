@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+  font-family: "system-ui", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #050505;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#title {
+  position: absolute;
+  top: -25px;
+  text-align: center;
+  text-shadow: 3px 3px black;
+  width: 100%;
+}
+
+.orbit:hover {
+  animation-play-state: paused !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.orbit:hover .label {
+  display: block;
+}
+
+.label {
+  position: absolute;
+  top: -35px;
+  margin-bottom: 1vmin;
+  font-size: 1.5vmin;
+  left: 45%;
+  display: none;
+  z-index: 10;
+  text-shadow: 2px 2px 4px black;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8vmin;
+  height: 8vmin;
+  background: radial-gradient(circle, #ffd700, #ff8c00);
+  border-radius: 50%;
+  box-shadow: 0 0 40px #ff8c00;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sun img {
+  display: block;
+  height: 60%;
+  width: 60%;
+}
+
+.paused {
+  animation-play-state: paused !important;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.planet {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 50%;
+}
+
+footer {
+  position: absolute;
+  bottom: 15px;
+  font-size: 1.2vmin;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sun:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  transition: transform 4s;
+}
+
+/* 
+Всяка планета има собствена големина (width и height),
+цвят и текстура (background, box-shadow) и
+радиус и скорост на орбитата (animation duration).
+*/
+
+.orbit-mercury {
+  width: 14vmin;
+  height: 14vmin;
+  animation: spin 6s linear infinite;
+  z-index: 9;
+}
+
+#mercury {
+  width: 2vmin;
+  height: 2vmin;
+  background: radial-gradient(circle at 30% 30%, #a1a1a1, #4a4a4a);
+  box-shadow: inset 0 0.5vmin 0.5vmin rgba(0, 0, 0, 0.8);
+}
+
+.orbit-venus {
+  width: 20.5vmin;
+  height: 20.5vmin;
+  animation: spin 8.5s linear infinite;
+  z-index: 8;
+}
+
+#venus {
+  width: 2.5vmin;
+  height: 2.5vmin;
+  background: #e3bb76;
+  background: radial-gradient(circle at 30% 30%, #eecb8b, #c18f3d);
+  box-shadow: inset 0 0.8vmin 0.8vmin rgba(0, 0, 0, 0.7);
+}
+
+.orbit-earth {
+  width: 28vmin;
+  height: 28vmin;
+  animation: spin 10s linear infinite;
+  z-index: 7;
+}
+#earth {
+  width: 3vmin;
+  height: 3vmin;
+}
+
+.orbit-mars {
+  width: 36vmin;
+  height: 36vmin;
+  animation: spin 15s linear infinite;
+  z-index: 6;
+}
+#mars {
+  width: 2.8vmin;
+  height: 2.8vmin;
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #8b0000);
+  box-shadow: inset 0 0.6vmin 1vmin rgba(0, 0, 0, 0.8);
+}
+
+.orbit-jupiter {
+  width: 48vmin;
+  height: 48vmin;
+  animation: spin 25s linear infinite;
+  z-index: 5;
+}
+#jupiter {
+  width: 5vmin;
+  height: 5vmin;
+  background: #c36634;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.orbit-saturn {
+  width: 62vmin;
+  height: 62vmin;
+  animation: spin 40s linear infinite;
+  z-index: 4;
+}
+#saturn {
+  width: 4.5vmin;
+  height: 4.5vmin;
+  background: linear-gradient(180deg, #ead6b8, #cba973);
+  box-shadow: inset 0 1.2vmin 1.2vmin rgba(0, 0, 0, 0.6);
+}
+#ring {
+  transform: translateX(-10%);
+  width: 140%;
+  height: 0.3vmin;
+  top: 50%;
+  position: absolute;
+  box-shadow: inset 0 0 0 0.3vmin rgba(198, 169, 115, 0.6);
+}
+
+.orbit-uranus {
+  width: 76vmin;
+  height: 76vmin;
+  animation: spin 55s linear infinite;
+  z-index: 3;
+}
+
+#uranus {
+  width: 3.5vmin;
+  height: 3.5vmin;
+  background: radial-gradient(circle at 30% 30%, #d1e7e7, #75b3b3);
+  box-shadow: inset 0 1vmin 1vmin rgba(0, 0, 0, 0.6);
+}
+
+.orbit-neptune {
+  width: 88vmin;
+  height: 88vmin;
+  animation: spin 75s linear infinite;
+  z-index: 2;
+}
+#neptune {
+  width: 3.4vmin;
+  height: 3.4vmin;
+  background: radial-gradient(circle at 30% 30%, #5b5ddf, #2a2a72);
+  box-shadow: inset 0 1vmin 1vmin rgba(0, 0, 0, 0.7);
+}
+
+/* Анимация за орбита на планетите */
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
