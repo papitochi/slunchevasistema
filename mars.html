@@ -1,105 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Марс</h1>
-      <div class="planet-info">
-        <div class="planet-mars">
-          <div id="mars"></div>
-        </div>
-        <div class="mars-info">
-          <p>
-            Земята е третата планета от Слънцето и единствената известна
-            планета, която поддържа живот. Тя има атмосфера, съставена предимно
-            от азот и кислород, което я прави подходяща за дишане от живите
-            организми.
-          </p>
-          <p>
-            Земята има един естествен спътник - Луната, която влияе на приливите
-            и отливите в океаните. Планетата обикаля около Слънцето за около
-            365.25 дни, което определя продължителността на годината.
-          </p>
-          <p>
-            Повърхността на Земята е разнообразна, с континенти, океани, планини
-            и равнини. Тя е дом на милиони видове растения и животни, както и на
-            човешката цивилизация.
-          </p>
-          <table>
-            <tr>
-              <th>Характеристика</th>
-              <th>Стойност</th>
-            </tr>
-            <tr>
-              <td>Диаметър</td>
-              <td>6,779 км</td>
-            </tr>
-            <tr>
-              <td>Маса</td>
-              <td>6.39 × 10^23 kg</td>
-            </tr>
-            <tr>
-              <td>Орбитален период</td>
-              <td>687 дни</td>
-            </tr>
-            <tr>
-              <td>Спътници</td>
-              <td>Фобос и Деймос</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </body>
-  <style>
-    .container {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Марс</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="planets.css" />
+		<link rel="icon" href="./img/mars.png" sizes="128x128" type="image/x-icon" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Марс</h1>
+			<main>
+				<div class="planet-image">
+					<img src="./img/mars.png" alt="Марс" />
+				</div>
+				<div class="info">
+					<p>
+						Марс е четвъртата планета от Слънчевата система. Тя носи името на римския бог на войната, чийто щит и копие образуват символа на планетата (♂). Заради особения ѝ цвят е наричана още
+						„Червената планета“.
+					</p>
+					<p> Марс има два естествени спътника: Фобос и Деймос (в превод от гръцки: „страх“ и „ужас“). Те са малки и имат неправилна форма. </p>
+					<p> Диаметърът на Марс е почти двойно по-малък от земния. Планетата е по-малко плътна от Земята, притежава едва 15% от нейния обем и само около 11% от нейната маса. </p>
+					<table>
+						<tr>
+							<th>Характеристика</th>
+							<th>Стойност</th>
+						</tr>
+						<tr>
+							<td>Диаметър</td>
+							<td>6,779 км</td>
+						</tr>
+						<tr>
+							<td>Маса</td>
+							<td>6.39 × 10^23 kg</td>
+						</tr>
+						<tr>
+							<td>Орбитален период</td>
+							<td>687 дни</td>
+						</tr>
+						<tr>
+							<td>Спътници</td>
+							<td>Фобос и Деймос</td>
+						</tr>
+					</table>
+				</div>
+			</main>
+			<div class="home">
+				<img src="./img/satellite.svg" alt="" />
+			</div>
+		</div>
+	</body>
+	<style>
+		body {
+			overflow: auto;
+		}
+		.container {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
 
-    table {
-      border-collapse: collapse;
-      border: 1px solid white;
-      text-align: left;
-      margin-top: 3em;
-    }
+		table {
+			border-collapse: collapse;
+			border: 1px solid white;
+			text-align: left;
+			margin-top: 3em;
+		}
 
-    tr,
-    td,
-    th {
-      padding: 0.5em;
-      border: 1px solid white;
-    }
+		tr,
+		td,
+		th {
+			padding: 0.5em;
+			border: 1px solid white;
+		}
 
-    #mars {
-      width: 100%;
-      border-radius: 50%;
-    }
+		#mars {
+			width: 80%;
+			height: 35vmax;
+		}
 
-    .planet-mars {
-      min-width: 50%;
-    }
+		.planet-mars {
+			border-radius: 50%;
+			min-width: 50%;
+			position: relative;
+		}
 
-    .planet-mars img:hover {
-      animation-play-state: paused;
-    }
+		.planet-mars img:hover {
+			animation-play-state: paused;
+		}
 
-    .planet-mars img {
-      animation: rotate 20s linear infinite;
-    }
+		.planet-mars img {
+			top: -20px;
+			border-radius: 50%;
+			position: absolute;
+			/* animation: rotate 20s linear infinite; */
+		}
 
-    .planet-info {
-      display: flex;
-      gap: 3em;
-      margin-inline: 2em;
-    }
-  </style>
+		.planet-info {
+			display: flex;
+			gap: 3em;
+			margin-inline: 2em;
+		}
+	</style>
 </html>

@@ -1,0 +1,88 @@
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid white;
+	text-align: left;
+	margin-top: 3em;
+}
+
+h1 {
+	text-align: center;
+}
+
+tr,
+td,
+th {
+	padding: 0.5em;
+	border: 1px solid white;
+}
+
+.planet-image {
+	width: 80%;
+	height: 35vmax;
+	border-radius: 50%;
+	min-width: 50%;
+	position: relative;
+	overflow: hidden;
+}
+
+.planet-image img:hover {
+	animation-play-state: paused;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a::after {
+	content: url("./img/ext.svg");
+	width: 200px;
+	height: 200px;
+}
+
+.planet-image img {
+	border-radius: 50%;
+	position: absolute;
+	animation: rotate 20s linear infinite;
+}
+
+.home {
+	box-shadow: inset 30px 0px 10px black;
+}
+
+main {
+	display: flex;
+	gap: 3em;
+	margin-inline: 2em;
+}
+
+table {
+	width: 100%;
+}
+
+.info {
+	margin-right: 10vmax;
+	text-align: justify;
+}
+
+@media screen and (max-width: 800px) {
+	main {
+		flex-direction: column;
+	}
+	.planet-image {
+		width: 100%;
+		height: 60vmin;
+	}
+	.info {
+		margin-right: 0;
+	}
+}
