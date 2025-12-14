@@ -236,6 +236,14 @@ footer {
 		transform: translate(-50%, -50%) rotate(360deg);
 	}
 }
+@keyframes mobilespin {
+	from {
+		transform: translate(50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(50%, -50%) rotate(360deg);
+	}
+}
 
 @keyframes rotate {
 	from {
@@ -243,5 +251,50 @@ footer {
 	}
 	to {
 		transform: rotate(360deg);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		gap: 3em;
+	}
+
+	.planet {
+		top: 50%;
+	}
+
+	.sun {
+		position: absolute;
+		bottom: 0;
+		left: 45%;
+		transform: translateX(50%);
+		scale: 2.5;
+		transform: none;
+	}
+
+	.sun img {
+		display: none;
+	}
+
+	.orbit:nth-child(even) {
+		transform: translateX(75%);
+	}
+	.orbit:nth-child(odd) {
+		transform: translateX(-75%);
+	}
+
+	.orbit {
+		top: auto;
+		left: auto;
+		transform: none;
+		animation: none;
+		position: relative;
+	}
+	.orbit {
+		scale: 4;
+		height: 10vmin;
+		width: 10vmin;
 	}
 }
