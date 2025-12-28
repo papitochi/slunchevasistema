@@ -13,6 +13,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	color: white;
+	position: relative;
 }
 
 img {
@@ -22,12 +23,29 @@ img {
 	display: block;
 }
 
-#title {
+header {
+	width: 100%;
+	height: 3em;
+	display: flex;
 	position: absolute;
-	top: -25px;
+	top: 10px;
+	justify-content: center;
+}
+
+header a {
+	display: flex;
+	gap: 1em;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+#title {
+	margin: 0;
 	text-align: center;
 	text-shadow: 3px 3px black;
-	width: 100%;
 }
 
 .orbit:hover {
@@ -99,6 +117,16 @@ footer {
 	bottom: 15px;
 	font-size: 1.2vmin;
 	color: rgba(255, 255, 255, 0.5);
+	text-align: center;
+}
+
+footer a {
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .sun:hover {
@@ -219,6 +247,34 @@ footer {
 	animation: spin 75s linear infinite;
 	z-index: 2;
 }
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.3);
+	cursor: pointer;
+	width: 5em;
+	height: 5em;
+	z-index: 5;
+}
+
+.arrow img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	position: absolute;
+	padding: 1.1em;
+}
+
+.arrow-left {
+	left: 1.5em;
+}
+
+.arrow-right {
+	right: 1.5em;
+}
+
 #neptune {
 	width: 3.4vmin;
 	height: 3.4vmin;
@@ -236,14 +292,6 @@ footer {
 		transform: translate(-50%, -50%) rotate(360deg);
 	}
 }
-@keyframes mobilespin {
-	from {
-		transform: translate(50%, -50%) rotate(0deg);
-	}
-	to {
-		transform: translate(50%, -50%) rotate(360deg);
-	}
-}
 
 @keyframes rotate {
 	from {
@@ -257,20 +305,40 @@ footer {
 @media screen and (max-width: 800px) {
 	body {
 		display: flex;
+		height: auto;
 		flex-direction: column;
 		gap: 3em;
+		overflow: auto !important;
 	}
 
+	#container {
+		display: flex;
+		flex-direction: column;
+		gap: 3em;
+		margin-top: 6em;
+		transform: scale(1);
+	}
 	.planet {
 		top: 50%;
 	}
 
+	footer {
+		font-size: 2vmin;
+	}
+
+	nav {
+		font-size: 3.5vmin;
+	}
+
 	.sun {
-		position: absolute;
-		bottom: 0;
-		left: 45%;
-		transform: translateX(50%);
-		scale: 2.5;
+		position: relative;
+		scale: 5;
+		transform: none;
+		left: 0;
+		margin-block: 5em;
+	}
+
+	.sun:hover {
 		transform: none;
 	}
 
@@ -278,23 +346,20 @@ footer {
 		display: none;
 	}
 
-	.orbit:nth-child(even) {
-		transform: translateX(75%);
-	}
-	.orbit:nth-child(odd) {
-		transform: translateX(-75%);
-	}
-
 	.orbit {
+		scale: 4;
+		height: 8vmin;
+		width: 8vmin;
 		top: auto;
 		left: auto;
 		transform: none;
 		animation: none;
 		position: relative;
+		margin-block: 2em;
+		animation: rotate 3s linear infinite;
 	}
-	.orbit {
-		scale: 4;
-		height: 10vmin;
-		width: 10vmin;
+
+	.arrow {
+		top: 25%;
 	}
 }

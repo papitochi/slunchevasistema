@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Контакти</title>
+		<link rel="shortcut icon" href="./img/satellite.svg" type="image/x-icon" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html">
+				<div>
+					<img src="./img/satellite.svg" alt="" />
+				</div>
+				<h1 id="title">Слънчева система</h1>
+			</a>
+		</header>
+		<div class="container">
+			<div class="info">
+				<ul>
+					<li> Изготвено от Пламен Димитров </li>
+					<li> Студент първи курс специалност "Киберсигурност" във ВВМУ "Никола Й. Вапцаров" </li>
+					<li>Имейл за връзка: <a href="mailto:126425227@naval-acad.bg">126425227@naval-acad.bg</a></li>
+				</ul>
+			</div>
+			<form action="submit">
+				<label for="name">Вашето име:</label>
+				<input type="text" name="name" id="name" />
+				<label for="range" id="rangeLabel">Как бихте оценили сайта?: </label>
+				<input required type="range" id="range" min="0" max="10" name="ocenka" />
+				<label for="name">Препоръки:</label>
+				<textarea spellcheck="false" type="text" name="name" rows="2" cols="2"></textarea>
+				<button type="submit" disabled>Изпрати</button>
+			</form>
+		</div>
+		<script>
+			const range = document.getElementById("range");
+			const rangeLabel = document.getElementById("rangeLabel");
+
+			rangeLabel.innerHTML = "Как бихте оценили сайта?: " + `<span class="ocenka">${range.value}</span>`;
+			range.addEventListener("input", () => {
+				rangeLabel.innerHTML = "Как бихте оценили сайта?: " + `<span class="ocenka">${range.value}</span>`;
+			});
+		</script>
+	</body>
+	<style>
+		body {
+			height: 100vh;
+		}
+
+		ul {
+			padding: 2.5em;
+		}
+
+		ul li {
+			padding: 0.2em;
+			max-width: 20vmax;
+		}
+
+		nav {
+			position: absolute;
+			top: 2em;
+		}
+
+		.container {
+			border: 2px solid white;
+			border-radius: 1em;
+		}
+
+		form {
+			margin-top: 2em;
+			border: 2px solid white;
+			padding: 1em;
+			display: flex;
+			flex-direction: column;
+			gap: 1vmin;
+			border-radius: 1em;
+		}
+
+		form input {
+			max-width: 50%;
+			border: 1px solid black;
+		}
+		a {
+			font-weight: bold;
+		}
+
+		.ocenka {
+			font-weight: bold;
+			margin-left: 0.1em;
+		}
+
+		textarea {
+			resize: none;
+		}
+
+		button[type="submit"] {
+			height: 2em;
+		}
+		header {
+			opacity: 0.1;
+			transition: opacity 0.3s ease-out;
+		}
+
+		header:hover {
+			opacity: 1;
+			transition: opacity 0.5s ease-in;
+		}
+
+		input {
+			accent-color: white;
+		}
+	</style>
+</html>

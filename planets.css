@@ -17,6 +17,17 @@ h1 {
 	text-align: center;
 }
 
+header {
+	opacity: 0.1;
+	position: relative;
+	transition: opacity 0.3s ease-out;
+}
+
+header:hover {
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+}
+
 tr,
 td,
 th {
@@ -31,6 +42,7 @@ th {
 	min-width: 50%;
 	position: relative;
 	overflow: hidden;
+	user-select: none;
 }
 
 .planet-image img:hover {
@@ -43,7 +55,7 @@ a {
 	font-weight: bold;
 }
 
-a::after {
+a[href^="http"]::after {
 	display: inline;
 	content: url("./img/ext.svg");
 	width: 200px;
@@ -54,10 +66,6 @@ a::after {
 	border-radius: 50%;
 	position: absolute;
 	animation: rotate 20s linear infinite;
-}
-
-.home {
-	box-shadow: inset 10px 0px 10px black;
 }
 
 main {
