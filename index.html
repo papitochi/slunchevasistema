@@ -10,93 +10,132 @@
 	</head>
 	<body style="overflow: hidden">
 		<header>
-			<a href="index.html">
+			<a href="#" id="navigation">
 				<div>
 					<img src="./img/satellite.svg" alt="" />
 				</div>
-				<h1 id="title">Слънчева система</h1>
+				<div id="navigation-title">
+					<div>
+						<h1 id="title">Слънчева система</h1>
+						<div id="slogan-container">
+							<h5 id="slogan">Една звезда. Осем свята.</h5>
+							<div>
+								<img src="./img/stars.svg" alt="" />
+							</div>
+						</div>
+					</div>
+					<div id="angle-down"><img src="./img/angle-down.svg" alt="" /></div>
+				</div>
 			</a>
+			<nav>
+				<a href="./mercury.html"><div>Меркурий</div></a>
+				<a href="./venus.html"><div>Венера</div></a>
+				<a href="./earth.html"><div>Земя</div></a>
+				<a href="./mars.html"><div>Марс</div></a>
+				<a href="./jupiter.html"><div>Юпитер</div></a>
+				<a href="./saturn.html"><div>Сатурн</div></a>
+				<a href="./uranus.html"><div>Уран</div></a>
+				<a href="./neptune.html"><div>Нептун</div></a>
+				<a href="./contact.html"><div>Контакти</div></a>
+			</nav>
 		</header>
-		<div id="container" style="transform: scale(0.9)">
-			<div class="orbit orbit-mercury">
-				<span class="label">Меркурий</span>
-				<div class="planet-container">
-					<a href="./mercury.html">
-						<div id="mercury" class="planet"></div>
-					</a>
-				</div>
-			</div>
 
-			<div class="orbit orbit-venus">
-				<span class="label">Венера</span>
-				<div class="planet-container">
-					<a href="./venus.html">
-						<div id="venus" class="planet"></div>
-					</a>
-				</div>
-			</div>
+		<!-- Слънчевата система -->
 
-			<div class="orbit orbit-earth">
-				<span class="label">Земя</span>
-				<div class="planet-container">
-					<div id="earth" class="planet">
-						<a href="./earth.html">
-							<img src="./img/earth-icon.svg" alt="earth" />
-						</a>
+		<div id="container">
+			<a href="./mercury.html">
+				<div class="orbit orbit-mercury">
+					<span class="label">Меркурий</span>
+					<div class="planet-container">
+						<div id="mercury" class="planet"><img src="./img/mercury.png" alt="" /></div>
 					</div>
 				</div>
-			</div>
+			</a>
 
-			<div class="orbit orbit-mars">
-				<span class="label">Марс</span>
-				<div class="planet-container">
-					<a href="./mars.html"><div id="mars" class="planet"></div></a>
+			<a href="./venus.html">
+				<div class="orbit orbit-venus">
+					<span class="label">Венера</span>
+					<div class="planet-container">
+						<div id="venus" class="planet"><img src="./img/venus.png" alt="" /></div>
+					</div>
 				</div>
-			</div>
+			</a>
+
+			<a href="./earth.html">
+				<div class="orbit orbit-earth">
+					<span class="label">Земя</span>
+					<div class="planet-container">
+						<div id="earth" class="planet">
+							<img src="./img/earth2.png" alt="earth" />
+						</div>
+					</div>
+				</div>
+			</a>
+
+			<a href="./mars.html">
+				<div class="orbit orbit-mars">
+					<span class="label">Марс</span>
+					<div class="planet-container">
+						<div id="mars" class="planet"><img src="./img/mars.png" alt="" /></div>
+					</div>
+				</div>
+			</a>
+
 			<div class="sun">
 				<img src="./img/play.png" alt="" />
 			</div>
 
-			<div class="orbit orbit-jupiter">
-				<span class="label">Юпитер</span>
-				<div class="planet-container">
-					<a href="./jupiter.html">
-						<div id="jupiter" class="planet"></div>
-					</a>
+			<a href="./jupiter.html">
+				<div class="orbit orbit-jupiter">
+					<span class="label">Юпитер</span>
+					<div class="planet-container">
+						<div id="jupiter" class="planet"><img src="./img/jupiter.png" alt="" /></div>
+					</div>
 				</div>
-			</div>
+			</a>
 
-			<div class="orbit orbit-saturn">
-				<span class="label">Сатурн</span>
-				<div class="planet-container">
-					<a href="./saturn.html">
-						<div id="saturn" class="planet"><div id="ring"></div></div>
-					</a>
+			<a href="./saturn.html">
+				<div class="orbit orbit-saturn">
+					<span class="label">Сатурн</span>
+					<div class="planet-container">
+						<div id="saturn" class="planet"><img src="./img/saturn.png" alt="" /></div>
+					</div>
 				</div>
-			</div>
+			</a>
 
-			<div class="orbit orbit-uranus">
-				<span class="label">Уран</span>
-				<div class="planet-container">
-					<a href="./uranus.html"><div id="uranus" class="planet"></div></a>
+			<a href="./uranus.html">
+				<div class="orbit orbit-uranus">
+					<span class="label">Уран</span>
+					<div class="planet-container">
+						<div id="uranus" class="planet"><img src="./img/uranus.png" alt="" /></div>
+					</div>
 				</div>
-			</div>
+			</a>
 
-			<div class="orbit orbit-neptune">
-				<span class="label">Нептун</span>
-				<div class="planet-container">
-					<a href="./neptune.html">
-						<div id="neptune" class="planet"></div>
-					</a>
+			<a href="./neptune.html">
+				<div class="orbit orbit-neptune">
+					<span class="label">Нептун</span>
+					<div class="planet-container">
+						<div id="neptune" class="planet"><img src="./img/neptune.png" alt="" /></div>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
 		<footer>
 			* - задръжте върху някоя от орбитите на планетите, за да паузирате
-			<address> Сайтът е направен от <a href="mailto:126425227@naval-acad.bg">Пламен Димитров</a></address>
-			<nav>
-				<a href="./contact.html">Контакти</a>
-			</nav>
+			<address> Сайтът е изработен от <a href="mailto:126425227@naval-acad.bg">Пламен Димитров</a></address>
 		</footer>
+		<script>
+			const sun = document.querySelector(".sun");
+			const orbits = document.querySelectorAll(".orbit");
+
+			// Паузиране на анимацията за орбитиране, за по-лесно цъкане върху планетите
+
+			sun.addEventListener("click", () => {
+				orbits.forEach((orbit) => {
+					orbit.classList.toggle("paused");
+				});
+			});
+		</script>
 	</body>
 </html>

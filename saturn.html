@@ -7,6 +7,7 @@
 		<link rel="icon" href="./img/saturn.png" type="image/x-icon" />
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="planets.css" />
+		<script src="./script.js" defer></script>
 	</head>
 	<body>
 		<div class="container">
@@ -15,7 +16,9 @@
 					<div>
 						<img src="./img/satellite.svg" alt="" />
 					</div>
-					<h1 id="title">Слънчева система</h1>
+					<div>
+						<h1 id="title">Слънчева система</h1>
+					</div>
 				</a>
 			</header>
 			<a href="./jupiter.html">
@@ -24,7 +27,22 @@
 			<a href="./uranus.html">
 				<div class="arrow arrow-right"><img src="./img/uranus.png" alt="next" /></div>
 			</a>
-			<h1>Сатурн</h1>
+			<div id="navigation">
+				<div id="navigation-title">
+					<h1>Сатурн</h1>
+					<div id="angle-down"><img src="./img/angle-down.svg" alt="" /></div>
+				</div>
+			</div>
+			<nav>
+				<a href="./mercury.html"><div>Меркурий</div></a>
+				<a href="./venus.html"><div>Венера</div></a>
+				<a href="./earth.html"><div>Земя</div></a>
+				<a href="./mars.html"><div>Марс</div></a>
+				<a href="./jupiter.html"><div>Юпитер</div></a>
+				<a href="./uranus.html"><div>Уран</div></a>
+				<a href="./neptune.html"><div>Нептун</div></a>
+				<a href="./contact.html"><div>Контакти</div></a>
+			</nav>
 			<main>
 				<div class="planet-image" style="border-radius: 0">
 					<img src="./img/saturn.png" style="animation: none; border-radius: 0" alt="Сатурн" />

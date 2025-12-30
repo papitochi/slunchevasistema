@@ -25,16 +25,89 @@ img {
 
 header {
 	width: 100%;
-	height: 3em;
 	display: flex;
 	position: absolute;
 	top: 10px;
-	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 header a {
 	display: flex;
 	gap: 1em;
+}
+
+nav {
+	background: blue;
+	width: 25vmax;
+	display: none;
+	justify-content: center;
+	z-index: 10;
+	margin-top: 1em;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: rgba(0, 0, 0, 0.9);
+	flex-direction: column;
+	border-radius: 0.5em;
+	position: absolute;
+	top: 3.5em;
+}
+
+nav div {
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3vmin;
+}
+
+nav div:hover {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+#navigation {
+	display: flex;
+	position: relative;
+	min-height: 3em;
+	justify-content: center;
+}
+
+#navigation-title {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+#angle-down {
+	width: 3em;
+	height: 100%;
+	position: relative;
+	left: -5px;
+}
+
+#slogan {
+	margin: 0;
+}
+
+#slogan-container {
+	display: flex;
+	gap: 0.4em;
+	width: 100%;
+	height: 1em;
+	justify-content: center;
+}
+
+#slogan-container div {
+	position: relative;
+	width: 1em;
+	left: 0;
+}
+
+/* Клас, който да използвам в javascript */
+
+.visible {
+	display: flex;
 }
 
 a {
@@ -78,7 +151,7 @@ a {
 	background: radial-gradient(circle, #ffd700, #ff8c00);
 	border-radius: 50%;
 	box-shadow: 0 0 40px #ff8c00;
-	z-index: 10;
+	z-index: 9;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -91,9 +164,13 @@ a {
 	width: 60%;
 }
 
+/* Клас за паузиране на анимацията на орбитирането */
+
 .paused {
 	animation-play-state: paused !important;
 }
+
+/* Всяка планета има орбита, която представлява центриран невидим квадрат, който се върти безкрайно с анимацията spin */
 
 .orbit {
 	position: absolute;
@@ -103,6 +180,8 @@ a {
 	border: 1px solid rgba(255, 255, 255, 0.15);
 	border-radius: 50%;
 }
+
+/* Планетите също са центрирани в орбитата */
 
 .planet {
 	transform: translate(-50%, -50%);
@@ -114,7 +193,7 @@ a {
 
 footer {
 	position: absolute;
-	bottom: 15px;
+	bottom: 10px;
 	font-size: 1.2vmin;
 	color: rgba(255, 255, 255, 0.5);
 	text-align: center;
@@ -136,13 +215,13 @@ footer a:hover {
 
 /* 
 Всяка планета има собствена големина (width и height),
-цвят и текстура (background, box-shadow) и
+сянка (box-shadow) и
 радиус и скорост на орбитата (animation duration).
 */
 
 .orbit-mercury {
-	width: 14vmin;
-	height: 14vmin;
+	width: 12.6vmin;
+	height: 12.6vmin;
 	animation: spin 6s linear infinite;
 	z-index: 9;
 }
@@ -150,103 +229,96 @@ footer a:hover {
 #mercury {
 	width: 2vmin;
 	height: 2vmin;
-	background: radial-gradient(circle at 30% 30%, #a1a1a1, #4a4a4a);
 	box-shadow: inset 0 0.5vmin 0.5vmin rgba(0, 0, 0, 0.8);
 }
 
 .orbit-venus {
-	width: 20.5vmin;
-	height: 20.5vmin;
+	width: 18.45vmin;
+	height: 18.45vmin;
 	animation: spin 8.5s linear infinite;
 	z-index: 8;
 }
 
 #venus {
-	width: 2.5vmin;
-	height: 2.5vmin;
-	background: #e3bb76;
-	background: radial-gradient(circle at 30% 30%, #eecb8b, #c18f3d);
-	box-shadow: inset 0 0.8vmin 0.8vmin rgba(0, 0, 0, 0.7);
+	width: 2.25vmin;
+	height: 2.25vmin;
+	filter: grayscale(0.3);
+	box-shadow: inset 0 0.5vmin 0.5vmin rgba(0, 0, 0, 0.8);
 }
 
 .orbit-earth {
-	width: 28vmin;
-	height: 28vmin;
+	width: 25.2vmin;
+	height: 25.2vmin;
 	animation: spin 10s linear infinite;
 	z-index: 7;
 }
 #earth {
-	width: 3vmin;
-	height: 3vmin;
+	width: 2.7vmin;
+	height: 2.7vmin;
 }
 
 .orbit-mars {
-	width: 36vmin;
-	height: 36vmin;
+	width: 32.4vmin;
+	height: 32.4vmin;
 	animation: spin 15s linear infinite;
 	z-index: 6;
 }
 #mars {
-	width: 2.8vmin;
-	height: 2.8vmin;
-	background: radial-gradient(circle at 30% 30%, #ff6b6b, #8b0000);
+	width: 2.52vmin;
+	height: 2.52vmin;
 	box-shadow: inset 0 0.6vmin 1vmin rgba(0, 0, 0, 0.8);
 }
 
 .orbit-jupiter {
-	width: 48vmin;
-	height: 48vmin;
+	width: 43.2vmin;
+	height: 43.2vmin;
 	animation: spin 25s linear infinite;
 	z-index: 5;
 }
 #jupiter {
-	width: 5vmin;
-	height: 5vmin;
-	background: #c36634;
+	width: 4.5vmin;
+	height: 4.5vmin;
 	box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .orbit-saturn {
-	width: 62vmin;
-	height: 62vmin;
+	width: 55.8vmin;
+	height: 55.8vmin;
 	animation: spin 40s linear infinite;
 	z-index: 4;
 }
 #saturn {
-	width: 4.5vmin;
-	height: 4.5vmin;
-	background: linear-gradient(180deg, #ead6b8, #cba973);
-	box-shadow: inset 0 1.2vmin 1.2vmin rgba(0, 0, 0, 0.6);
-}
-#ring {
-	transform: translateX(-10%);
-	width: 140%;
-	height: 0.3vmin;
-	top: 50%;
-	position: absolute;
-	box-shadow: inset 0 0 0 0.3vmin rgba(198, 169, 115, 0.6);
+	width: 9.5vmin;
+	height: 9.5vmin;
 }
 
 .orbit-uranus {
-	width: 76vmin;
-	height: 76vmin;
+	width: 68vmin;
+	height: 68vmin;
 	animation: spin 55s linear infinite;
 	z-index: 3;
 }
 
 #uranus {
-	width: 3.5vmin;
-	height: 3.5vmin;
-	background: radial-gradient(circle at 30% 30%, #d1e7e7, #75b3b3);
+	width: 3.15vmin;
+	height: 3.15vmin;
 	box-shadow: inset 0 1vmin 1vmin rgba(0, 0, 0, 0.6);
 }
 
 .orbit-neptune {
-	width: 88vmin;
-	height: 88vmin;
+	width: 79vmin;
+	height: 79vmin;
 	animation: spin 75s linear infinite;
 	z-index: 2;
 }
+
+#neptune {
+	width: 3vmin;
+	height: 3vmin;
+	box-shadow: inset 0 1vmin 1vmin rgba(0, 0, 0, 0.7);
+}
+
+/* Стрелките за наляво и надясно */
 
 .arrow {
 	position: absolute;
@@ -275,13 +347,6 @@ footer a:hover {
 	right: 1.5em;
 }
 
-#neptune {
-	width: 3.4vmin;
-	height: 3.4vmin;
-	background: radial-gradient(circle at 30% 30%, #5b5ddf, #2a2a72);
-	box-shadow: inset 0 1vmin 1vmin rgba(0, 0, 0, 0.7);
-}
-
 /* Анимация за орбита на планетите */
 
 @keyframes spin {
@@ -293,6 +358,8 @@ footer a:hover {
 	}
 }
 
+/* Анимацията spin, преработена за мобилни устройства */
+
 @keyframes rotate {
 	from {
 		transform: rotate(0deg);
@@ -301,6 +368,8 @@ footer a:hover {
 		transform: rotate(360deg);
 	}
 }
+
+/* Адаптивен дизайн за мобилни устройства */
 
 @media screen and (max-width: 800px) {
 	body {
@@ -314,12 +383,25 @@ footer a:hover {
 	#container {
 		display: flex;
 		flex-direction: column;
-		gap: 3em;
-		margin-top: 6em;
-		transform: scale(1);
+		margin-top: 10em;
+		justify-content: center;
 	}
+
+	#container > * {
+		display: flex;
+		justify-content: center;
+	}
+
 	.planet {
 		top: 50%;
+		width: 80% !important;
+		height: 80% !important;
+	}
+
+	#neptune,
+	#uranus {
+		width: 40% !important;
+		height: 40% !important;
 	}
 
 	footer {
@@ -327,16 +409,21 @@ footer a:hover {
 	}
 
 	nav {
-		font-size: 3.5vmin;
+		z-index: 10;
+		width: 100%;
+		font-size: 3vmax;
 	}
 
 	.sun {
 		position: relative;
-		scale: 5;
 		transform: none;
 		left: 0;
+		height: 80vmin;
+		width: 100%;
 		margin-block: 5em;
 	}
+
+	/* Премахване на паузирането на анимацията чрез натискане върху Слънцето, понеже не е нужна на мобилни устройства */
 
 	.sun:hover {
 		transform: none;
@@ -346,10 +433,12 @@ footer a:hover {
 		display: none;
 	}
 
+	#angle-down {
+		width: 2em;
+		align-self: center;
+	}
+
 	.orbit {
-		scale: 4;
-		height: 8vmin;
-		width: 8vmin;
 		top: auto;
 		left: auto;
 		transform: none;
@@ -361,5 +450,16 @@ footer a:hover {
 
 	.arrow {
 		top: 25%;
+	}
+
+	#navigation {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	header a {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
 	}
 }

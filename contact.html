@@ -6,35 +6,63 @@
 		<title>Контакти</title>
 		<link rel="shortcut icon" href="./img/satellite.svg" type="image/x-icon" />
 		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
 	</head>
 	<body>
-		<header>
-			<a href="index.html">
-				<div>
-					<img src="./img/satellite.svg" alt="" />
-				</div>
-				<h1 id="title">Слънчева система</h1>
-			</a>
-		</header>
 		<div class="container">
-			<div class="info">
-				<ul>
-					<li> Изготвено от Пламен Димитров </li>
-					<li> Студент първи курс специалност "Киберсигурност" във ВВМУ "Никола Й. Вапцаров" </li>
-					<li>Имейл за връзка: <a href="mailto:126425227@naval-acad.bg">126425227@naval-acad.bg</a></li>
-				</ul>
-			</div>
-			<form action="submit">
-				<label for="name">Вашето име:</label>
-				<input type="text" name="name" id="name" />
-				<label for="range" id="rangeLabel">Как бихте оценили сайта?: </label>
-				<input required type="range" id="range" min="0" max="10" name="ocenka" />
-				<label for="name">Препоръки:</label>
-				<textarea spellcheck="false" type="text" name="name" rows="2" cols="2"></textarea>
-				<button type="submit" disabled>Изпрати</button>
-			</form>
+			<header>
+				<a href="#" id="navigation">
+					<div>
+						<img src="./img/satellite.svg" alt="" />
+					</div>
+					<div id="navigation-title">
+						<div>
+							<h1 id="title">Слънчева система</h1>
+							<div id="slogan-container">
+								<h5 id="slogan">Една звезда. Осем свята.</h5>
+								<div>
+									<img src="./img/stars.svg" alt="" />
+								</div>
+							</div>
+						</div>
+						<div id="angle-down"><img src="./img/angle-down.svg" alt="" /></div>
+					</div>
+				</a>
+				<nav>
+					<a href="./index.html"><div>Начало</div></a>
+					<a href="./mercury.html"><div>Меркурий</div></a>
+					<a href="./venus.html"><div>Венера</div></a>
+					<a href="./earth.html"><div>Земя</div></a>
+					<a href="./mars.html"><div>Марс</div></a>
+					<a href="./jupiter.html"><div>Юпитер</div></a>
+					<a href="./saturn.html"><div>Сатурн</div></a>
+					<a href="./uranus.html"><div>Уран</div></a>
+					<a href="./neptune.html"><div>Нептун</div></a>
+					<a href="./contact.html"><div>Контакти</div></a>
+				</nav>
+			</header>
+			<section>
+				<div class="info">
+					<ul>
+						<li> Изготвено от Пламен Димитров </li>
+						<li> Студент първи курс специалност "Киберсигурност" във ВВМУ "Никола Й. Вапцаров" </li>
+						<li>Имейл за връзка: <a href="mailto:126425227@naval-acad.bg">126425227@naval-acad.bg</a></li>
+					</ul>
+				</div>
+				<form action="submit">
+					<label for="name">Вашето име:</label>
+					<input type="text" name="name" id="name" />
+					<label for="range" id="rangeLabel">Как бихте оценили сайта?: </label>
+					<input required type="range" id="range" min="0" max="10" name="ocenka" />
+					<label for="name">Препоръки:</label>
+					<textarea spellcheck="false" type="text" name="name" rows="2" cols="2"></textarea>
+					<button type="submit" disabled>Изпрати</button>
+				</form>
+			</section>
 		</div>
 		<script>
+			// Промяна на оценката в текста в реално време
+
 			const range = document.getElementById("range");
 			const rangeLabel = document.getElementById("rangeLabel");
 
@@ -46,11 +74,22 @@
 	</body>
 	<style>
 		body {
+			width: 100vw;
 			height: 100vh;
+			align-items: baseline;
+			flex-direction: row;
 		}
 
 		ul {
 			padding: 2.5em;
+		}
+
+		section {
+			display: flex;
+			flex-direction: column;
+			width: 60vmin;
+			border: 2px solid white;
+			border-radius: 1em;
 		}
 
 		ul li {
@@ -63,9 +102,20 @@
 			top: 2em;
 		}
 
+		header {
+			position: relative;
+			margin-bottom: 5em;
+		}
+
 		.container {
-			border: 2px solid white;
-			border-radius: 1em;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		nav {
+			top: 4em;
 		}
 
 		form {
@@ -82,6 +132,7 @@
 			max-width: 50%;
 			border: 1px solid black;
 		}
+
 		a {
 			font-weight: bold;
 		}
@@ -98,9 +149,14 @@
 		button[type="submit"] {
 			height: 2em;
 		}
+
 		header {
-			opacity: 0.1;
+			opacity: 0.8;
 			transition: opacity 0.3s ease-out;
+		}
+
+		header a > div {
+			min-height: 3em;
 		}
 
 		header:hover {
@@ -110,6 +166,12 @@
 
 		input {
 			accent-color: white;
+		}
+
+		@media screen and (max-width: 600px) {
+			section {
+				width: 90%;
+			}
 		}
 	</style>
 </html>
